@@ -12,7 +12,7 @@ int main() {
         cv::Mat frame = cam.read();
         if (frame.empty()) {
             std::cerr << "No frame captured!" << std::endl;
-            continue;  // Skip this iteration instead of breaking
+            continue;  
         }
 
         auto armors = detector.detect(frame, frame_count++);
@@ -32,7 +32,7 @@ int main() {
         }
 
         cv::imshow("YOLO Detection", frame);
-        if (cv::waitKey(1) == 27) break;  // ESC to exit
+        if (cv::waitKey(1) == 27) break;  
     }
 
     return 0;
