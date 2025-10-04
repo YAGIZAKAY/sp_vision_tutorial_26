@@ -1,5 +1,6 @@
 #pragma once
 #include <opencv2/opencv.hpp>
+#include "hikrobot/include/MvCameraControl.h"
 
 class myCamera {
 public:
@@ -8,5 +9,7 @@ public:
     cv::Mat read();          
 
 private:
-    cv::VideoCapture _cap;   
+    void* _handle = nullptr;
+    MV_FRAME_OUT _raw;
+    bool _initialized = false;
 };

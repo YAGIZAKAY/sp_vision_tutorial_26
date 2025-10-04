@@ -6,6 +6,7 @@ find_package(yaml-cpp REQUIRED)
 add_library(io STATIC 
     my_camera.cpp
 )
+target_include_directories(io PUBLIC /opt/MVS/include)  # or wherever MVS is installed
 
 # hikrobot
 target_include_directories(io PUBLIC hikrobot/include)
